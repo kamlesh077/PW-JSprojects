@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Toggle Heading Text</title>
+  <script>
+    function toggleHeading() {
+      var heading = document.getElementById("heading");
+      var currentText = heading.textContent;
+
+      if (currentText === "The most affordable learning platform") {
+        heading.textContent = "PW Skills";
+      } else {
+        heading.textContent = "The most affordable learning platform";
+      }
+    }
+  </script>
+</head>
+<body>
+  <h1 id="heading">The most affordable learning platform</h1>
+  <button onclick="toggleHeading()">Toggle Text</button>
+</body>
+</html>

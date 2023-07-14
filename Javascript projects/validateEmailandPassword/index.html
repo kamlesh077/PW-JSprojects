@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login Form Validation</title>
+  <style>
+    .error {
+      color: red;
+    }
+
+    .success {
+      color: green;
+    }
+  </style>
+  <script>
+    function validateForm() {
+      // Get form input values
+      var emailInput = document.getElementById("email").value;
+      var passwordInput = document.getElementById("password").value;
+
+      // Validate email
+      var emailValid = emailInput.includes("@");
+
+      // Validate password
+      var passwordValid = passwordInput.length >= 8;
+
+      // Display error or success message
+      var messageElement = document.getElementById("message");
+
+      if (emailValid && passwordValid) {
+        messageElement.textContent = "Valid email and password!";
+        messageElement.className = "success";
+      } else {
+        messageElement.textContent = "Invalid email or password!";
+        messageElement.className = "error";
+      }
+
+      // Prevent form submission
+      return false;
+    }
+  </script>
+</head>
+<body>
+  <form onsubmit="return validateForm()">
+    <label for="email">Email:</label>
+    <input type="text" id="email" required><br><br>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" required><br><br>
+
+    <input type="submit" value="Submit">
+  </form>
+
+  <p id="message"></p>
+</body>
+</html>

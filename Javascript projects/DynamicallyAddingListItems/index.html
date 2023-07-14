@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Add List Items</title>
+  <script>
+    // Pre-existing array of list items
+    var listItems = [
+      "HTML and Semantics",
+      "Starting with CSS",
+      "Working Template",
+      "Mobile responsive webpages",
+      "Grid and Flex-box in CSS",
+      "Projects using HTML & CSS",
+      "Version Control and Git",
+      "Getting Started with JavaScript",
+      "Advance JavaScript",
+      "Working with DOM",
+      "Making Projects using HTML, CSS and JavaScript",
+      "Understanding Fundamental of Computer Science",
+      "Getting Started with Database",
+      "Understanding the Database",
+      "Starting with NodeJS and Express",
+      "Understanding React and its Fundamentals",
+      "Understanding Hooks and Routers",
+      "Starting and Completing Full Fledge Projects",
+      "Course Features",
+      "Full Stack Web Development Certification",
+      "Self-Paced Learning",
+      "20 + hands-on industry real-time projects",
+      "160+ hours classes",
+      "Every week doubt clearing session",
+      "2 Year Dashboard access",
+      "Course Materials",
+      "Doubt clearing one-to-one",
+      "Doubt clearing through mail and support",
+      "Discord Community",
+      "Assignments",
+      "Quiz in every module",
+      "Live projects with real-time implementation",
+      "Resume building",
+      "Career guidance",
+      "Interview Preparation",
+      "Mock Interviews",
+      "Regular assessment",
+      "80% Scheduled Classes & 20% Live Classes",
+      "PWLabs Access",
+      "Experience Portal Access"
+    ];
+    var currentIndex = 0;
+
+    // Function to add list item
+    function addListItem() {
+      var list = document.getElementById("list");
+
+      if (currentIndex < listItems.length) {
+        var newItem = document.createElement("li");
+        newItem.textContent = listItems[currentIndex];
+        list.appendChild(newItem);
+        currentIndex++;
+      } else {
+        alert("All items have been added!");
+      }
+    }
+
+    // Attach click event listener to the button
+    document.getElementById("addButton").addEventListener("click", addListItem);
+  </script>
+</head>
+<body>
+  <h1>What you'll learn:</h1>
+  <ul id="list"></ul>
+  <button id="addButton">Add Item</button>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Move Image with Arrow Keys</title>
+  <style>
+    #container {
+      position: relative;
+      width:fit-content;
+      height: fit-content;
+      border: 1px solid black;
+      box-sizing: border-box;
+
+    }
+
+    #image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 50px;
+      height: 50px;
+      transition: top 0.3s, left 0.3s; /* Add smooth transition */
+    }
+  </style>
+  <script>
+    var imageElement;
+    var containerElement;
+
+    var imageX = 0;
+    var imageY = 0;
+
+    function moveImage(event) {
+      var key = event.key;
+      var step = 10;
+
+      switch (key) {
+        case "ArrowUp":
+          imageY -= step;
+          break;
+        case "ArrowDown":
+          imageY += step;
+          break;
+        case "ArrowLeft":
+          imageX -= step;
+          break;
+        case "ArrowRight":
+          imageX += step;
+          break;
+      }
+
+      imageElement.style.top = imageY + "px";
+      imageElement.style.left = imageX + "px";
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+      containerElement = document.getElementById("container");
+      imageElement = document.getElementById("image");
+
+      document.addEventListener("keydown", moveImage);
+    });
+  </script>
+</head>
+<body>
+  <div id="container">
+    <img id="image" src="linkedin.png" alt="Moving Image">
+  </div>
+</body>
+</html>
